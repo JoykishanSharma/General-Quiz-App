@@ -3,7 +3,9 @@
     <string name="todo">TODO</string>
     <string name="username"> Username</string>
     <string name="password"> Password</string>
-    <string name="register_Me">Register Me.</string>
+    <string name="register_Me">Don\'t have a Account? Register</string>
     <string name="login">Login</string>
     <string name="email_address">  Email Address</string>
+    <string name="have_a_account_login">Have a Account? Login</string>
+    <string name="register">Register</string>
 </resources>

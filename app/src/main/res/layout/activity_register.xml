@@ -61,7 +61,7 @@
         android:drawableStart="@drawable/ic_action_pass_24dp"
         android:inputType="textPassword"
         android:layout_marginBottom="130dp"
-        android:layout_alignBottom="@+id/cardView"
+        android:layout_alignBottom="@+id/cardView1"
         android:layout_alignStart="@+id/reg_email"
         android:autofillHints="" />
 
@@ -71,9 +71,9 @@
         app:cardBackgroundColor="@color/colorPrimaryDark"
         app:cardCornerRadius="25dp"
         app:cardElevation="10dp"
-        android:id="@+id/cardView"
+        android:id="@+id/cardView1"
         android:layout_marginBottom="31dp"
-        android:layout_above="@+id/textView2"
+        android:layout_above="@+id/login"
         android:layout_centerHorizontal="true">
 
         <RelativeLayout
@@ -85,17 +85,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="@string/login"
+                android:text="@string/register"
                 android:textColor="#fff"
                 android:textSize="18sp" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register_Me"
+        android:text="@string/have_a_account_login"
         android:textColor="#BDBDBD"
         android:layout_above="@+id/linearLayout"
         android:layout_centerHorizontal="true"
