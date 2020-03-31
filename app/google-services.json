@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "903490707682",
+    "firebase_url": "https://general-quiz-app.firebaseio.com",
+    "project_id": "general-quiz-app",
+    "storage_bucket": "general-quiz-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903490707682:android:7f617c47e2d1ed27dc3ebb",
+        "android_client_info": {
+          "package_name": "com.joyappsdevteam.generalquizapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "903490707682-qfoojsmpd0g93mjc1bi91skt4apvu7ao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCotUo7ZvpXVVNIBPhBGhACcRkLq351DW8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "903490707682-qfoojsmpd0g93mjc1bi91skt4apvu7ao.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
