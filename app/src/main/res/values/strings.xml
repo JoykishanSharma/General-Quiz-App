@@ -8,4 +8,6 @@
     <string name="email_address">  Email Address</string>
     <string name="have_a_account_login">Have a Account? Login</string>
     <string name="register">Register</string>
+    <string name="welcome_to_ngeneral_quiz_app">Welcome To \nGeneral Quiz App</string>
+    <string name="loading_please_wait">Loading... Please Wait...</string>
 </resources>

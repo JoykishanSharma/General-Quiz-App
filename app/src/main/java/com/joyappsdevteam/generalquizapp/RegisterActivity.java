@@ -3,7 +3,10 @@ package com.joyappsdevteam.generalquizapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -32,6 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+                overridePendingTransition(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
             }
         });
 
@@ -52,11 +56,33 @@ public class RegisterActivity extends AppCompatActivity {
                     reg_password.setError("Password is Empty");
                 }
                 else {
-                    Toast.makeText(getApplicationContext(),"Registered Successfully!",Toast.LENGTH_SHORT).show();
-                    finish();
+                    if (isConnected()){
+                        Toast.makeText(getApplicationContext(),"Registered Successfully!",Toast.LENGTH_SHORT).show();
+                        finish();
+                        overridePendingTransition(android.R.anim.slide_out_right,android.R.anim.slide_in_left);
+                    }
+                    else {
+                        Toast.makeText(RegisterActivity.this,"No Internet Connection",Toast.LENGTH_SHORT).show();
+                    }
+
                 }
             }
         });
 
+    }
+
+    private boolean isConnected() {
+
+        ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        assert cm != null;
+        NetworkInfo netinfo = cm.getActiveNetworkInfo();
+
+        if (netinfo != null && netinfo.isConnectedOrConnecting()) {
+            android.net.NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+            android.net.NetworkInfo mobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+            return (mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting());
+        } else
+            return false;
     }
 }
