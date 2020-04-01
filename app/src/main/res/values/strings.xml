@@ -1,13 +1,14 @@
 <resources>
     <string name="app_name">General Quiz App</string>
     <string name="todo">TODO</string>
-    <string name="username"> Username</string>
-    <string name="password"> Password</string>
+    <string name="enter_password">&#160;&#160;Enter Password</string>
     <string name="register_Me">Don\'t have a Account? Register</string>
     <string name="login">Login</string>
-    <string name="email_address">  Email Address</string>
+    <string name="email_address">&#160;&#160;Email Address</string>
     <string name="have_a_account_login">Have a Account? Login</string>
     <string name="register">Register</string>
     <string name="welcome_to_ngeneral_quiz_app">Welcome To \nGeneral Quiz App</string>
-    <string name="loading_please_wait">Loading... Please Wait...</string>
+    <string name="loading_please_wait">Loading… Please Wait…</string>
+    <string name="re_enter_password">&#160;&#160;Re-Enter Password</string>
+    <string name="forgot_password">Forgot Password?</string>
 </resources>
