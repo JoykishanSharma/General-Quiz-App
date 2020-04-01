@@ -9,6 +9,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -58,6 +59,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(reg_mail)) {
                     reg_emailAddress.setError("Email Address is Empty");
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(reg_mail).matches()){
+                    reg_password.setError("Invalid Email Address");
                 } else if (TextUtils.isEmpty(reg_pass)) {
                     reg_password.setError("Password is Empty");
                 } else if (TextUtils.isEmpty(reg_repass)) {

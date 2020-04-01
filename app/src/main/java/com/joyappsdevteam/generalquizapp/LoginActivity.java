@@ -3,7 +3,6 @@ package com.joyappsdevteam.generalquizapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -16,19 +15,14 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -101,10 +95,10 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void savedLoginState(boolean bol){
+    private void savedLoginState(){
         SharedPreferences sp = getSharedPreferences("logged_in", MODE_PRIVATE);
         SharedPreferences.Editor et = sp.edit();
-        et.putBoolean("is_logged", bol);
+        et.putBoolean("is_logged", true);
         et.apply();
     }
 
@@ -161,9 +155,9 @@ public class LoginActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.i("TAG", "signInWithEmail:success");
                             //FirebaseUser user = mAuth.getCurrentUser();
-                            //updateUI(user);
+                            savedLoginState();
                             Toast.makeText(LoginActivity.this,"Login Successful",Toast.LENGTH_SHORT).show();
-
+                            goToHomeActivity();
                         } else {
                             Log.i("TAG", "signInWithEmail:failure", task.getException());
                             Toast.makeText(LoginActivity.this, "Login failed.", Toast.LENGTH_SHORT).show();
@@ -186,5 +180,10 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private void goToHomeActivity(){
+        Intent i = new Intent(LoginActivity.this,HomeActivity.class);
+        startActivity(i);
     }
 }

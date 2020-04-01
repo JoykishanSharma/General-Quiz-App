@@ -1,7 +1,6 @@
 package com.joyappsdevteam.generalquizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,7 +14,6 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-
 
         welcomeScreen5Seconds();
     }
@@ -36,6 +34,7 @@ public class WelcomeActivity extends AppCompatActivity {
                     if (logged_in){
                         Intent intent = new Intent(WelcomeActivity.this,HomeActivity.class);
                         startActivity(intent);
+                        overridePendingTransition(R.anim.custom_slide_in_right,R.anim.custom_slide_out_left);
                     }
                     else {
                         Intent intent = new Intent(WelcomeActivity.this,LoginActivity.class);

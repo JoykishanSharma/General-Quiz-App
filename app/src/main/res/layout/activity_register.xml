@@ -46,6 +46,7 @@
         android:textColor="#fafafa"
         android:textColorHint="#BEBDBDBD"
         android:hint="@string/enter_password"
+        android:maxLength="15"
         android:drawableStart="@drawable/ic_action_pass_24dp"
         android:inputType="textPassword"
         android:layout_marginBottom="24dp"
@@ -64,6 +65,7 @@
         android:hint="@string/re_enter_password"
         android:drawableStart="@drawable/ic_action_pass_24dp"
         android:inputType="textPassword"
+        android:maxLength="15"
         android:layout_marginBottom="130dp"
         android:layout_alignBottom="@+id/cardView1"
         android:layout_alignStart="@+id/reg_password"
@@ -72,7 +74,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
         android:layout_height="50dp"
-        app:cardBackgroundColor="@color/colorPrimaryDark"
+        app:cardBackgroundColor="#572FB3"
         app:cardCornerRadius="25dp"
         app:cardElevation="10dp"
         android:clickable="true"
@@ -84,7 +86,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/ripple_effect">
 
             <TextView
                 android:id="@+id/textView"
@@ -102,7 +105,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/have_a_account_login"
-        android:textColor="#BDBDBD"
+        android:textColor="#fafafa"
         android:layout_above="@+id/linearLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="6dp" />
