@@ -5,20 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".HomeActivity">
+    tools:context=".AnotherActivity">
 
     <TextView
+        android:id="@+id/text2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World"
-        android:layout_centerInParent="true"
-        android:textSize="24sp"
-        android:textColor="@color/white" />
+        android:text="Another Activity"
+        android:textSize="40sp"
+        android:textColor="@color/black"
+        android:layout_centerInParent="true"/>
 
+    <Button
+        android:id="@+id/clickme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text2"
+        android:text="Click me"
+        android:padding="24dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="#FAFAFA"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"/>
 
-
-    <com.luseen.spacenavigation.SpaceNavigationView
-        android:id="@+id/space"
+    <!--<com.luseen.spacenavigation.SpaceNavigationView
+        android:id="@+id/space1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -31,6 +42,6 @@
         app:centre_button_icon="@drawable/ic_home_black_24dp"
         app:space_item_icon_size="@dimen/space_item_icon_default_size"
         app:space_item_icon_only_size="@dimen/space_item_icon_only_size"
-        app:space_item_text_size="@dimen/space_item_text_default_size" />
+        app:space_item_text_size="@dimen/space_item_text_default_size" />-->
 
 </RelativeLayout>
