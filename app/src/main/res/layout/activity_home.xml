@@ -10,27 +10,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World"
+        android:text="HOme Activity"
         android:layout_centerInParent="true"
         android:textSize="24sp"
         android:textColor="@color/white" />
 
-
-
-    <com.luseen.spacenavigation.SpaceNavigationView
-        android:id="@+id/space"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
-        app:active_item_color="@color/colorAccent"
-        app:centre_button_color="@color/colorPrimary"
-        app:inactive_item_color="@color/black"
-        app:active_centre_button_icon_color="@color/white"
-        app:space_background_color="@color/white"
-        app:centre_button_icon="@drawable/ic_home_black_24dp"
-        app:space_item_icon_size="@dimen/space_item_icon_default_size"
-        app:space_item_icon_only_size="@dimen/space_item_icon_only_size"
-        app:space_item_text_size="@dimen/space_item_text_default_size" />
+        android:id="@+id/bottom_navigation"
+        app:itemBackground="@color/colorPrimary"
+        app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@drawable/selector"
+        app:menu="@menu/menu_navigation"
+        android:layout_alignParentBottom="true"/>
+
 
 </RelativeLayout>

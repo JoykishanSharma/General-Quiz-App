@@ -5,29 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".AnotherActivity">
+    tools:context=".FeedbackActivity">
 
     <TextView
-        android:id="@+id/text2"
+        android:id="@+id/text123"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Another Activity"
+        android:text="FeedBack Activity"
         android:textSize="40sp"
         android:textColor="@color/black"
         android:layout_centerInParent="true"/>
 
     <Button
-        android:id="@+id/clickme"
+        android:id="@+id/clickme1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/text2"
+        android:layout_below="@id/text123"
         android:text="Click me"
         android:padding="24dp"
         android:background="@color/colorPrimaryDark"
         android:textColor="#FAFAFA"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"/>
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
@@ -38,7 +37,5 @@
         app:itemIconTint="@drawable/selector"
         app:menu="@menu/menu_navigation"
         android:layout_alignParentBottom="true"/>
-
-
 
 </RelativeLayout>

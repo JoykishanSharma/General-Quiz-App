@@ -1,50 +1,63 @@
 package com.joyappsdevteam.generalquizapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.luseen.spacenavigation.SpaceItem;
-import com.luseen.spacenavigation.SpaceNavigationView;
-import com.luseen.spacenavigation.SpaceOnClickListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
 
-    SpaceNavigationView navigationView;
-
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        navigationView = findViewById(R.id.space);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        navigationView.initWithSaveInstanceState(savedInstanceState);
-        navigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_style_black_24dp));
-        navigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_developer_board_black_24dp));
-        navigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_feedback_black_24dp));
-        navigationView.addSpaceItem(new SpaceItem("", R.drawable.ic_settings_black_24dp));
+        bottomNavigationView.setSelectedItemId(R.id.home);
 
-        navigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onCentreButtonClick() {
-                Toast.makeText(HomeActivity.this,"Centre Button Clicked", Toast.LENGTH_SHORT).show();
-                navigationView.setCentreButtonSelectable(true);
-                Intent i = new Intent(HomeActivity.this,AnotherActivity.class);
-                startActivity(i);
-            }
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.feedback:
+                        startActivity(new Intent(getApplicationContext(),FeedbackActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
 
-            @Override
-            public void onItemClick(int itemIndex, String itemName) {
-                Toast.makeText(HomeActivity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
-            }
+                    case R.id.dashboard:
+                        startActivity(new Intent(getApplicationContext(),AnotherActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
 
-            @Override
-            public void onItemReselected(int itemIndex, String itemName) {
-                Toast.makeText(HomeActivity.this, itemIndex + " " + itemName, Toast.LENGTH_SHORT).show();
+                    case R.id.home:
+                        return true;
+
+                    case R.id.style_palette:
+
+                        Toast.makeText(getApplicationContext(),"style_pallete is clicked",Toast.LENGTH_SHORT).show();
+
+                        //startActivity(new Intent(getApplicationContext(),AnotherActivity.class));
+                        //overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.settings:
+
+                        Toast.makeText(getApplicationContext(),"settings is clicked",Toast.LENGTH_SHORT).show();
+
+                        //startActivity(new Intent(getApplicationContext(),AnotherActivity.class));
+                        //overridePendingTransition(0,0);
+                        return true;
+                }
+
+                return false;
             }
         });
 

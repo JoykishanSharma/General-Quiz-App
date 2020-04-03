@@ -6,47 +6,33 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class AnotherActivity extends AppCompatActivity {
+public class FeedbackActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_another);
-
-
-        button = findViewById(R.id.clickme);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(AnotherActivity.this,"Button Clicked", Toast.LENGTH_SHORT).show();
-
-            }
-        });
+        setContentView(R.layout.activity_feedback);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        bottomNavigationView.setSelectedItemId(R.id.dashboard);
+        bottomNavigationView.setSelectedItemId(R.id.feedback);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.feedback:
-                        startActivity(new Intent(getApplicationContext(),FeedbackActivity.class));
-                        overridePendingTransition(0,0);
                         return true;
 
                     case R.id.dashboard:
+                        startActivity(new Intent(getApplicationContext(),AnotherActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
 
                     case R.id.home:
@@ -74,6 +60,5 @@ public class AnotherActivity extends AppCompatActivity {
                 return false;
             }
         });
-
     }
 }
